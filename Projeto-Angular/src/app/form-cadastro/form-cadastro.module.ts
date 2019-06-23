@@ -8,12 +8,17 @@ import { FormRoutingModule } from './form-routing.module';
 
 
 @NgModule({
-  declarations: [FormCadastroComponent],
+  declarations: [
+    FormCadastroComponent
+  ],
+
   imports: [
     CommonModule,
     FormsModule,
     FormRoutingModule
-  ], exports: [
+  ],
+  
+  exports: [
     FormCadastroComponent,
     CommonModule
   ]
