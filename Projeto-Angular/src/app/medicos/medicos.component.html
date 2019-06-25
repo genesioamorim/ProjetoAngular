@@ -6,7 +6,7 @@
               <div class="card-body">
                 <h5 class="card-title">Dr. Roberto Sales </h5>
                 <p class="card-text">Atua como cardiologista.</p>
-                <a href="#" class="btn btn-primary">Ver pacientes</a>
+                <a (click)="VerPacientes( medicos)" class="btn btn-primary">Ver pacientes</a>
               </div>
             </div>
 
@@ -103,3 +103,18 @@
   </div>
   </div>
 </div>
+
+
+
+<ng-template #medicos>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" 
+                aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+     <h1>Não funcional</h1> 
+    </div>
+</ng-template>

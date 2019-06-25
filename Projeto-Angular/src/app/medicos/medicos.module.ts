@@ -5,6 +5,7 @@ import { MedicosRoutingModule } from './medicos-routing.modules';
 
 import { MedicosComponent } from './medicos.component';
 
+
 @NgModule({
   declarations: [
     MedicosComponent,
@@ -13,7 +14,9 @@ import { MedicosComponent } from './medicos.component';
   ],
   imports: [
     CommonModule,
-    MedicosRoutingModule
+    MedicosRoutingModule,
+
+
   ],
 
   exports:[
