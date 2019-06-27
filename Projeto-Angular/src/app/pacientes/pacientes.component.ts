@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pacientes.component.scss']
 })
 export class PacientesComponent implements OnInit {
-   pacientes = [
+  public pacientes:any = {} ;
+   pacientesBD = [
     {nome: "Thaddeus", cpf: "18936544599", endereco: "P.O. Box 778, 9425 Ac Avenue", telefone: "3695-0734", sexo: "feminino", idade: 64},
     {nome: "Patrick", cpf: "15359286799", endereco: "5397 Orci. St.", telefone: "1058-4428", sexo: "feminino", idade: 56},
     {nome: "Heather", cpf: "63999334599", endereco: "9357 Et, Av.", telefone: "7131-2058", sexo: "masculino", idade: 54},
@@ -108,15 +109,19 @@ export class PacientesComponent implements OnInit {
     {nome: "Cathleen", cpf: "98228027499", endereco: "8760 Urna, Avenue", telefone: "0534-7020", sexo: "masculino", idade: 34},
     {nome: "Gabriel", cpf: "34581868399", endereco: "Ap #242-1515 Mauris Avenue", telefone: "9578-7370", sexo: "masculino", idade: 46}
   ];
-  
- 
 
-  constructor() { 
-   
+
+
+
+  constructor() {
+
+    localStorage.setItem("Pacientes", JSON.stringify(this.pacientesBD));
 
   }
 
   ngOnInit() {
+    this.pacientes = JSON.parse( localStorage.getItem("Pacientes"));
+
   }
 
 }

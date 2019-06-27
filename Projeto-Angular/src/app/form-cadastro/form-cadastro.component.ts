@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-form-cadastro',
@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormCadastroComponent implements OnInit {
 
-  constructor() { }
+
+
+  onSubmit(form){
+    console.log(form);
+
+   }
+
+
+  constructor() {
+
+
+  }
 
   ngOnInit() {
   }

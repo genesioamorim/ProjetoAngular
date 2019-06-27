@@ -17,6 +17,7 @@ import { MedicosComponent } from './medicos.component';
     MedicosRoutingModule,
 
 
+
   ],
 
   exports:[
