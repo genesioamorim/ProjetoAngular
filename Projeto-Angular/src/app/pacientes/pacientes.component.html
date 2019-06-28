@@ -1,6 +1,17 @@
-<h3>Pacientes</h3>
-<input type="text" class="form-control shadow"  placeholder="o que você está buscando?">
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-row align-items-center">
+      <div class="col-md-11">
+
+        <input type="text" name ="Busca" ngModel class="form-control mb-2" id="inlineFormInput" placeholder="Pesquise pelo nome do paciente">
+      </div>
+
+      <div class="col-auto">
+        <button type="submit" class="btn btn-info mb-2">Pesquisar</button>
+      </div>
+    </div>
+  </form>
 <div class="jumbotron ">
+    <h3>Pacientes</h3>
   <table class="table ">
     <tr>
       <th>Nome</th>
