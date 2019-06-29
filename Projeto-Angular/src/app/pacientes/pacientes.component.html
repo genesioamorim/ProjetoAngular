@@ -14,6 +14,7 @@
     <h3>Pacientes</h3>
   <table class="table ">
     <tr>
+      <th>id</th>
       <th>Nome</th>
       <th>CPF</th>
       <th>Sexo</th>
@@ -23,12 +24,23 @@
 
     </tr>
     <tr  *ngFor = "let paciente of pacientes " >
-
+      <td>{{paciente.id}}</td>
       <td>{{paciente.nome}}</td>
       <td>{{paciente.cpf}}</td>
       <td>{{paciente.sexo}}</td>
       <td>{{paciente.idade}}</td>
       <td>{{paciente.telefone}}</td>
       <td>{{paciente.endereco}}</td>
+      <td class="table-action">
+          <button class="btn btn-outline-dark action-icon">
+            <span class="fa fa-eye"></span>
+          </button>
+          <a class="btn btn-outline-dark action-icon" [routerLink]="['/', 'pacientes', pacientes.id]">
+            <span class="fa fa-edit"></span>
+          </a>
+          <button class="btn btn-outline-dark action-icon" (click)="removeProduct(product.id)">
+            <span class="fa fa-trash"></span>
+          </button>
+        </td>
     </tr>
   </table>

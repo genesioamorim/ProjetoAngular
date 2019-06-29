@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { PacientesRoutingModule } from './pacientes-routing.module';
 import { FormsModule } from '@angular/forms';
 import { PacientesComponent } from './pacientes.component';
+import { EditPacientesComponent } from './edit-pacientes/edit-pacientes.component';
 
 
 @NgModule({
   declarations: [
-    PacientesComponent
+    PacientesComponent,
+    EditPacientesComponent
   ],
   imports: [
     CommonModule,

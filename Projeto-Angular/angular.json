@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/font-awesome/scss/font-awesome.scss",
               "src/assets/styles/styles.scss"
             ],
             "scripts": []
@@ -88,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/font-awesome/scss/font-awesome.scss",
               "src/assets/styles/styles.scss"
             ],
             "scripts": []
