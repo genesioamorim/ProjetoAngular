@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-pacientes',
@@ -17,25 +17,30 @@ pacientes: any = {};
 
   }
 
-
-  onSubmit(form: NgForm){
-    let paciente = [];
-    let pesquisa =[];
-    paciente = JSON.parse( localStorage.getItem("Pacientes"));;
-
-    pesquisa = paciente.filter(
-      item=> item.nome === form
-
-      )
-      localStorage.setItem('pesquisa', JSON.stringify(pesquisa));
-
-
-      this.pacientes = JSON.parse( localStorage.getItem("pesquisa"));
-
+  listarPacientes() {
+    const localPacientes = localStorage.getItem('Pacientes');
+    this.pacientes = JSON.parse(localPacientes);
   }
 
+  removePacientes(id) {
+    let pacientes = [];
+    let updatePacientes = [];
+    const localPacientes = localStorage.getItem('Pacientes');
+    pacientes = JSON.parse(localPacientes);
+
+    // Filter and return all diff by id
+    updatePacientes = pacientes.filter(item => item.id !== id);
+
+    // Save on localstorage
+    localStorage.setItem('Pacientes', JSON.stringify(updatePacientes));
+
+    // Update table
+    this.listarPacientes();
+  }
+
+
   ngOnInit() {
-  this.pacientes = JSON.parse( localStorage.getItem("Pacientes"));
+    this.listarPacientes();
 
   }
 

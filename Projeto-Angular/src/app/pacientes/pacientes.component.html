@@ -21,6 +21,7 @@
       <th>Idade</th>
       <th>Telefone</th>
       <th>Endereço</th>
+      <th>Ações</th>
 
     </tr>
     <tr  *ngFor = "let paciente of pacientes " >
@@ -32,13 +33,10 @@
       <td>{{paciente.telefone}}</td>
       <td>{{paciente.endereco}}</td>
       <td class="table-action">
-          <button class="btn btn-outline-dark action-icon">
-            <span class="fa fa-eye"></span>
-          </button>
-          <a class="btn btn-outline-dark action-icon" [routerLink]="['/', 'pacientes', pacientes.id]">
+          <a class="btn btn-outline-dark action-icon" [routerLink]="['/', 'pacientes', paciente.id]" >
             <span class="fa fa-edit"></span>
           </a>
-          <button class="btn btn-outline-dark action-icon" (click)="removeProduct(product.id)">
+          <button class="btn btn-outline-dark action-icon" (click)="removePacientes(paciente.id)">
             <span class="fa fa-trash"></span>
           </button>
         </td>
