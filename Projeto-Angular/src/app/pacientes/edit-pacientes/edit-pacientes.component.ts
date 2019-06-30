@@ -21,22 +21,29 @@ export class EditPacientesComponent implements OnInit {
 
     let paciente: any = {};
     paciente = form.value;
-    paciente.id = this.id;
+    paciente.id = Number(this.id);
+
 
     // Get Products on localstorage
-    const localStringPacientes = localStorage.getItem('Pacientes');
+    let localStringPacientes = localStorage.getItem('Pacientes');
     let localArrayPacientes = JSON.parse(localStringPacientes);
     // Update list product
     console.log(paciente);
     console.log(paciente.id);
-    localArrayPacientes.map(item => {
-      if (item.id === paciente.id) {
-        item = paciente;
-      }
-    });
-    console.log(localArrayPacientes);
+    console.log(typeof (paciente.id));
+    for (let index = 0; index < localArrayPacientes.length; index++) {
+      if(localArrayPacientes[index].id === paciente.id){
+
+        localArrayPacientes[index] = paciente;
+
+     }
+    }
+
+
+
+
     // Update Product on localstorage
-    const listaToString = JSON.stringify(localArrayPacientes);
+    let listaToString = JSON.stringify(localArrayPacientes);
     localStorage.setItem('Pacientes', listaToString);
     form.resetForm();
 
