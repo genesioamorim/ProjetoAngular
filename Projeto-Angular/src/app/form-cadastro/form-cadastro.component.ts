@@ -110,7 +110,7 @@ export class FormCadastroComponent implements OnInit {
       {id: 99, nome: "Uriah", cpf: "16330115-5408", endereco: "P.O. Box 478, 5853 Orci St.", telefone: "4126-4531", idade: 46, sexo: "masculino"},
       {id: 100, nome: "Nita", cpf: "16550520-6408", endereco: "P.O. Box 844, 9570 Ut, Av.", telefone: "6152-4166", idade: 60, sexo: "feminino"}
     ];
-  
+
 
 
 
@@ -128,11 +128,10 @@ export class FormCadastroComponent implements OnInit {
     localStorage.setItem("Pacientes", JSON.stringify(this.pacientes));
     form.resetForm();
 
-    
+
   }
   ngOnInit() {
-   // localStorage.clear();
-    
+
   }
 
 }

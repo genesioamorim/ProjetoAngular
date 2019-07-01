@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-pacientes',
@@ -20,6 +20,21 @@ pacientes: any = {};
   listarPacientes() {
     const localPacientes = localStorage.getItem('Pacientes');
     this.pacientes = JSON.parse(localPacientes);
+  }
+
+  filtrar(busca:NgForm){
+  let Busca = busca.value
+  let Pbusca= Busca.Busca;
+  let filtro =[]
+  const localPacientes = localStorage.getItem('Pacientes');
+  this.pacientes = JSON.parse(localPacientes);
+  filtro = this.pacientes.filter(item=> item.nome === Pbusca)
+
+  localStorage.setItem('busca', JSON.stringify(filtro));
+
+    const localbusca = localStorage.getItem('busca');
+    this.pacientes = JSON.parse(localbusca);
+
   }
 
   removePacientes(id) {

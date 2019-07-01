@@ -1,7 +1,10 @@
 .card-img-top{
 height:250px;
-width: auto;  
+width: auto;
 }
 .jumbotron{
     background-color: var(--info);
+}
+.card-text{
+  text-align: left;
 }
